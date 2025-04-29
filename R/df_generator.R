@@ -91,27 +91,6 @@ df_generator <- function(rows,
   return(df)
 }
 
-set.seed(43)
-df1 <- df_generator(
-  rows = 20,
-  id_col="ids",
-  date_col = "dt",
-  int_col = "score", int_range = c(10, 50),
-  float_col = "rating",
-  boolean_col = "passed",
-  letters_col = "grade_letter",
-  distribution_col = "normal_score",
-  dist_type = "normal",
-  dist_params = list(mean = 75, sd = 5),
-  user_col = "grades",
-  user_data = c("A","B","C","D","F"),
-  missing = "score",
-  n_missing = 3,
-  unique_id = "U-id",
-  id_prefix = "U",
-  id_digits = 7
-)
-print(df1)
 
 
 
