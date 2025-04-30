@@ -10,6 +10,8 @@ df_generator <- function(rows,
                          dist_params = list(mean = 50, sd = 10),
                          user_col = NULL,
                          user_data = NULL,
+                         unique_user_col = NULL,
+                         unique_user = NULL,
                          missing = NULL, n_missing = 0,
                          id_col = NULL,
                          unique_id = NULL, id_digits=4, id_prefix="")
@@ -52,7 +54,15 @@ df_generator <- function(rows,
     values <- sample(user_data, rows, replace = TRUE)
     df <- add_column(df, user_col, values)
   }
+  if (!is.null(unique_user_col)) {
+    if (rows > len(unique_user)){ stop ("Not enough data without replacement")
 
+    }
+    else{
+    values <- sample(user_unique, rows, replace = FALSE)
+    df <- add_column(df, unique_user_col, values)
+    }
+  }
   if (!is.null(distribution_col)) {
     if (dist_type == "normal") {
       vals <- rnorm(rows, mean = dist_params$mean, sd = dist_params$sd)
