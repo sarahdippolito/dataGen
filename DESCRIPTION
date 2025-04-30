@@ -1,16 +1,13 @@
 Package: dataGen
-Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Authors@R: c(
-    person(
-      "Jane", "Doe",
-      email = "jane@example.com",
-      role = c("aut", "cre")
-    )
-  )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
-Encoding: UTF-8
-LazyData: true
+Title: This package generates or modifies datasets according to users specifications 
+Version: 1.0
+Authors@R: person("Sarah", "Dippolito", email="dippolitos@usf.edu", role= c("aut", "cre"))
+Description: This package will take user input and generat datasets accordingly. 
+             Features will include datasets with integers, floats, randomized characters, unique characters,
+             booleans, random dates, date ranges, distributions, and colulmns with a specfied number 
+             of missing values. Aside from that it will generate datasets that consist solely of NAs, zeros,
+             or booleans. Lastly, it will come with randomly generated datasets. 
+Depends: R (>=3.1.2)
+Imports: base
+License: CCO
+LazyData:true
