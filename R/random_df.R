@@ -1,3 +1,9 @@
+#' random_df.R
+#' @param rows The number of rows in the data frame
+#' @param cols The number of columns in the data frame
+#' @return randomly generated data frame
+#' @export
+
 random_df <- function(rows, cols){
   df <- data.frame(row_id = 1:rows)[,0]
   h=1
