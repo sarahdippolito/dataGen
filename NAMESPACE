@@ -1,0 +1,7 @@
+exportPattern("^[[:alpha:]]+")
+export(df_generator)
+export(inject_NA)
+export(random_df)
+import(stats)
+import(utils)
+import(base)
