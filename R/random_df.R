@@ -17,22 +17,17 @@ random_df <- function(rows, cols){
       }
       if (col==2){
         col_name = paste0("normal",h)
-        mean = sample(1:1e6,1)
-        sd = sample(1:1e6,1)
+        mean = sample(1:10000,1)
+        sd = sample(1:100,1)
         vals <- rnorm(rows, mean = mean, sd = sd)
         df[[col_name]] <- vals
         h=h+1
       }
       if (col==3){
         col_name = paste0("uniform",q)
-        a = sample(1:1e6,1)
-        b = a+sample(1:1e6,1)
-        if(a<b){
+        a = sample(1:100,1)
+        b = a+sample(1:100,1)
           vals = runif(rows, min=a, max=b)
-        }
-        else{
-          vals = runif(rows, min=b, max=a)
-        }
         df[[col_name]] <- vals
         q=q+1
       }
