@@ -1,13 +1,14 @@
 Package: dataGen
 Title: This package generates or modifies datasets according to users specifications 
-Version: 1.0
+Version: 4.4.2
 Authors@R: person("Sarah", "Dippolito", email="dippolitos@usf.edu", role= c("aut", "cre"))
 Description: This package will take user input and generat datasets accordingly. 
-             Features will include datasets with integers, floats, randomized characters, unique characters,
-             booleans, random dates, date ranges, distributions, and colulmns with a specfied number 
-             of missing values. Aside from that it will generate datasets that consist solely of NAs, zeros,
-             or booleans. Lastly, it will come with randomly generated datasets. 
+             Features will include datasets with integers, floats, randomized characters, user data,
+             booleans, date ranges, distributions, and colulmns with a specfied number 
+             of missing values. Aside from that it will inject dataframes with the specified percentage of missing values.
+             Lastly, it will generate random datasets based on a number of specified columns and rows. 
+             or booleans. 
 Depends: R (>=3.1.2)
-Imports: base
+Imports: base, stats, utils
 License: CCO
 LazyData:true
