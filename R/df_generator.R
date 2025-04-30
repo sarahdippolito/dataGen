@@ -1,3 +1,10 @@
+#' df_generator.R
+#' @param rows The number of rows in the data frame
+#' @param cols The number of columns in the data frame
+#' @return specifically generated data frame
+#' @export
+
+
 df_generator <- function(rows,
                          date_col = NULL,
                          date_range = c(as.Date('2020-01-01'), as.Date('2025-01-01')),
