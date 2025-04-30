@@ -106,14 +106,14 @@ df_generator <- function(rows,
   }
 
   #Class S3
-  df <- structure(df, class = "generated_df")
-  return(df)
+  generated_df <- structure(df, class = "generated_df")
+  return(list(generated_df = generated_df, df = df))
 }
 
 
 
 
-df <- df_generator(
+result <- df_generator(
   rows = 15,
 
 
@@ -161,5 +161,7 @@ df <- df_generator(
   id_prefix = "U"
 )
 
-print(df)
+print(result$generated_df)
+print(result$df)
+
 
