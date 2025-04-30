@@ -134,7 +134,7 @@ df <- df_generator(
 
 
   unique_user_col = "email",
-  unique_user = paste0("student", 1:15, "@university.edu"),
+  unique_user = paste0("student", 1:15, "@usf.edu"),
 
 
   distribution_col = "SAT",
@@ -150,8 +150,8 @@ df <- df_generator(
 
 
   unique_id = "student_id",
-  id_digits = 4,
-  id_prefix = "ID_"
+  id_digits = 7,
+  id_prefix = "U_"
 )
 
 print(df)
