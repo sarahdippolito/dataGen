@@ -8,7 +8,7 @@ Description: This package will take user input and generat datasets accordingly.
              of missing values. Aside from that it will inject dataframes with the specified percentage of missing values.
              Lastly, it will generate random datasets based on a number of specified columns and rows. 
              or booleans. 
-Depends: R (>=3.1.2)
+Depends: R (>= 3.1.2)
 Imports: base, stats, utils
 License: CCO
 LazyData: true
