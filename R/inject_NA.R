@@ -1,3 +1,9 @@
+#' inject_NA.R
+#' @param df The dataframe
+#' @param columns Which columns to add missing values
+#' @return dataframe with injected NAs
+#' @export
+
 inject_NA <- function(df, columns, missing_percentage = 10) {
   stopifnot(is.data.frame(df))
   stopifnot(is.numeric(missing_percentage) && missing_percentage >= 0 && missing_percentage <= 100)
