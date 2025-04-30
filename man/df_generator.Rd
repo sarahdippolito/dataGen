@@ -32,11 +32,31 @@ df_generator(
 }
 \arguments{
 \item{rows}{The number of rows in the data frame}
-
-\item{cols}{The number of columns in the data frame}
+\item{date_col}{date column name}
+\item{date_range}{range for date_col}
+\item{int_col}{integer column name}
+\item{int_range}{range for int_col}
+\item{float_col}{name for float column}
+\item{float_min}{min for float column}
+\item{float_max}{max for float column}
+\item{boolean_col}{name for boolean column}
+\item{letters_col}{name for letters col}
+\item{distribution_col}{name for distribution column}
+\item{dist_type}{distribution type: options are normal, binomial, or uniform}
+\item{dist_params}{parameters for distribution column}
+\item{user_col}{name for user_col}
+\item{user_data}{data to be sampled (with replacement)}
+\item{unique_user_col}{name for unique_user_col}
+\item{unique_user}{data to be sampled (without replacement)}
+\item{missing}{column to add missing data}
+\item{n_missing}{number of missing datapoints to insert}
+\item{id_col}{name for id_col}
+\item{unique_id}{name for unique_id column}
+\item{id_digits}{number of digits in the unique id}
+\item{id_prefix}{prefix for unique id}
 }
 \value{
-specifically generated data frame
+generated data frame
 }
 \description{
 df_generator.R
