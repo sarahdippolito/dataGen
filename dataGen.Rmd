@@ -1,0 +1,130 @@
+---
+title: "dataGen"
+output: html_document
+date: "2025-04-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Three functions
+#### 1. df_generator
+#### 2. inject_NA
+#### 3. random_df
+
+
+### df_generator
+#### Inputs:
+- rows (int) * number of rows
+- date_col (str) * name of date column
+- date_range (vector) * range for date column
+- int_col (string) * name for int column
+- int_range (vector) * range for int column
+- float_col (string) * name for float column
+- float_min (int) * float column min
+- float_max (int) *. float column max
+- boolean_col (string) * boolean column name
+- letters_col (string) * letter column name
+- distribution_col (string) * distribution column name
+- dist_type (string) * type of distribution (normal, binomial, uniform)
+- dist_params (list) * parameters for the distribution column
+- user_col (string) * name for the user column
+- user_data (vector) * data to be sampled with replacement
+- unique_user_col (string) * name for unique user data column
+- unique_user (vector) * data to be sampled without replacement
+- missing (string) * name of columns to insert "NAs" into
+- n_missing (int) * number of missing data points to inject
+- id_col (string) * name for id column (sequence 1:rows)
+- unique_id (string) * name for unique id column
+- id_digits (int) * how many digits in the unique id
+- id_prefix (string) * id prefix
+
+### Purpose
+df_generator generates data frames based on the users specifications. It can input columns with dates, integers, floats, letters, ids, unique ids, booleans, distributions (normal, binomial, or uniform), and sample from user data (with or without replacement)
+
+### Example
+```{r}
+library(dataGen)
+df <- df_generator(
+  rows = 15,
+
+
+  date_col = "enrollment_date",
+
+
+
+  int_col = "test_result",
+  int_range = c(50, 100),
+
+
+  float_col = "GPA",
+  float_min = 2.0,
+  float_max = 4.0,
+
+
+  boolean_col = "passed",
+
+
+  letters_col = "last_name_initial",
+
+
+  user_col = "department",
+  user_data = c("Math", "Biology", "History", "CS", "Info_Science"),
+
+
+  unique_user_col = "email",
+  unique_user = paste0("student", 1:15, "@usf.edu"),
+
+
+  distribution_col = "SAT",
+  dist_type = "normal",
+  dist_params = list(mean = 1200, sd = 300),
+
+
+  missing = "test_result",
+  n_missing = 3,
+
+
+  id_col = "student_index",
+
+
+  unique_id = "student_id",
+  id_digits = 7,
+  id_prefix = "U"
+)
+print(df)
+```
+### inject_NA
+
+#### Inputs:
+- df(data frame) * your data frame
+- columns(string) * which columns to add missing values
+- missing_percentage(int) * percent of data to be missing
+ 
+### Purpose
+inject_na injects NA values into the given data frame into the choosen columns at a certain percentage 
+
+### Example
+```{r}
+library(dataGen)
+df <- iris
+df_new <- inject_NA(iris, c("Sepal.Length", "Sepal.Width", "Petal.Width"), 10 )
+df_new
+```
+
+### random_df
+#### Inputs:
+- rows (int) * number of rows
+- cols(int) * number of columns
+
+#### Purpose
+random_df generates a data frame with the specified number of rows and columns using randomly selected distributions (normal, binomial, uniform, poisson, and exponential) with randomly selected parameters
+
+#### Example
+```{r}
+library(dataGen)
+result_df <- random_df(12,3)
+print(result_df)
+```
+
