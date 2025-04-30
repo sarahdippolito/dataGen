@@ -98,6 +98,9 @@ df_generator <- function(rows,
     ids <- paste0(id_prefix, numeric_ids)
     df <- add_column(df, unique_id, ids)
   }
+
+  #Class S3
+  df <- structure(df, class = "generated_df")
   return(df)
 }
 
