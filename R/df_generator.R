@@ -55,11 +55,11 @@ df_generator <- function(rows,
     df <- add_column(df, user_col, values)
   }
   if (!is.null(unique_user_col)) {
-    if (rows > len(unique_user)){ stop ("Not enough data without replacement")
+    if (rows > length(unique_user)){ stop ("Not enough data without replacement")
 
     }
     else{
-    values <- sample(user_unique, rows, replace = FALSE)
+    values <- sample(unique_user, rows, replace = FALSE)
     df <- add_column(df, unique_user_col, values)
     }
   }
@@ -78,7 +78,6 @@ df_generator <- function(rows,
     df <- add_column(df, distribution_col, vals)
   }
 
-  # Inject missing values
   if (!is.null(missing) && n_missing > 0) {
     if (!(missing %in% colnames(df))) {
       stop("Specified column for missing values doesn't exist.")
@@ -106,4 +105,54 @@ df_generator <- function(rows,
 
 
 
+
+df <- df_generator(
+  rows = 15,
+
+
+  date_col = "enrollment_date",
+
+
+
+  int_col = "test_result",
+  int_range = c(50, 100),
+
+
+  float_col = "GPA",
+  float_min = 2.0,
+  float_max = 4.0,
+
+
+  boolean_col = "passed",
+
+
+  letters_col = "last_name_initial",
+
+
+  user_col = "department",
+  user_data = c("Math", "Biology", "History", "CS"),
+
+
+  unique_user_col = "email",
+  unique_user = paste0("student", 1:15, "@university.edu"),
+
+
+  distribution_col = "SAT",
+  dist_type = "normal",
+  dist_params = list(mean = 1200, sd = 300),
+
+
+  missing = "test_result",
+  n_missing = 3,
+
+
+  id_col = "student_index",
+
+
+  unique_id = "student_id",
+  id_digits = 4,
+  id_prefix = "ID_"
+)
+
+print(df)
 
