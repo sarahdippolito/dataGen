@@ -130,7 +130,7 @@ df <- df_generator(
 
 
   user_col = "department",
-  user_data = c("Math", "Biology", "History", "CS"),
+  user_data = c("Math", "Biology", "History", "CS", "Info_Science"),
 
 
   unique_user_col = "email",
@@ -151,7 +151,7 @@ df <- df_generator(
 
   unique_id = "student_id",
   id_digits = 7,
-  id_prefix = "U_"
+  id_prefix = "U"
 )
 
 print(df)
